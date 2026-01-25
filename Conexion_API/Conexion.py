@@ -87,11 +87,6 @@ presidentes=[{"Presidente":"Javier Milei","inicio":"2023-12-10","fin":"2027-12-9
 
 eventos=[{"evento":"","fecha":"","descripción":"","comentario":""}]
 
-df_total["presidente"]=np.nan
-for i in presidentes:
-    condiciones=((df_total["fecha"]>= i.get("inicio"))&(df_total["fecha"]<=i.get("fin")))
-    df_total["presidente"]=np.where(condiciones,i.get("Presidente"),df_total["presidente"])
-
 df_presidencias=pd.DataFrame(presidentes)
 df_info_var=pd.DataFrame(info_var)
 
